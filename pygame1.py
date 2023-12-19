@@ -23,6 +23,7 @@ import pygame
 import sys
 pygame.init()
 picture = pygame.image.load("/Users/zhongzhichen/Desktop/pygame/1.jpg")
+
 screen = pygame.display.set_mode((1024, 1024))
 pygame.display.set_caption("Pygame Window")
 while True:#game loop
@@ -35,3 +36,5 @@ while True:#game loop
     screen.fill((255,255,255))
     screen.blit(picture, (0,0))
     pygame.display.update()
+
+    
