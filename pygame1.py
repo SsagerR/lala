@@ -1,8 +1,8 @@
 #pygame.init()
 #pygame.quit()
-import pygame
-import sys 
-pygame.init()
+# import pygame
+# import sys 
+# pygame.init()
 # hero_rect = pygame.Rect(100, 100, 100, 100)
 # print("the origin of the hero: %d %d" % (hero_rect.x, hero_rect.y))
 # print("the size of the hero: %d %d" % (hero_rect.width, hero_rect.height))
@@ -14,7 +14,24 @@ pygame.init()
 #resolution指定屏幕的宽和高，默认创建的窗口大小和屏幕大小一致
 #flags窗口指定屏幕的附加选项，例如是否全屏等等，默认不需要传递
 #depth参数表示颜色的位数，默认自动匹配
-pygame.display.set_mode((600, 700))
-while True:
-    pass
-pygame.quit()#卸载游戏内存
+# pygame.display.set_mode((600, 700))
+# while True:
+#     pass
+# pygame.quit()#卸载游戏内存
+
+import pygame
+import sys
+pygame.init()
+picture = pygame.image.load("/Users/zhongzhichen/Desktop/pygame/1.jpg")
+screen = pygame.display.set_mode((1024, 1024))
+pygame.display.set_caption("Pygame Window")
+while True:#game loop
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+    
+    screen.fill((255,255,255))
+    screen.blit(picture, (0,0))
+    pygame.display.update()
